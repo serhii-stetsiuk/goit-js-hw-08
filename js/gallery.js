@@ -66,18 +66,6 @@ const images = [
   },
 ];
 const newGalary = document.querySelector('.gallery');
-const imageLink = document.querySelector('.gallery-link');
-const fullImage = document.querySelector('.gallery-image');
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.gallery-link').forEach(link => {
-    link.addEventListener('click', e => {
-		 e.preventDefault();
-	 });
-  });
-	
-	
-});
 
 function galleryTamplate(gallery) {
 	return `<li class="gallery-item">
@@ -100,6 +88,7 @@ newGalary.innerHTML = markup;
 
 let liElem;
 newGalary.addEventListener('click', e => {
+	 e.preventDefault();
 	if (e.target.nodeName !== 'IMG') return;
 	liElem = e.target.dataset.source;
 
